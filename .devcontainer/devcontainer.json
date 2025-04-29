@@ -1,0 +1,13 @@
+{
+	"name": "Yocto KAS Ubuntu 22.04",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+	"containerUser": "developer",
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/developer/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/developer/.gnupg,type=bind,consistency=cached"
+	],
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace"
+}

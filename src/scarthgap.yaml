@@ -1,0 +1,57 @@
+header:
+  version: 11
+  
+repos:
+  layers/poky:
+    url: "https://git.yoctoproject.org/git/poky"
+    branch: scarthgap
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  layers/meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    branch: scarthgap
+    layers:
+      meta-oe:
+      meta-multimedia:
+      meta-python:
+      meta-networking:
+      meta-gnome:
+      meta-filesystems:
+      meta-webserver:
+      meta-perl:
+      meta-xfce:
+      meta-initramfs:
+
+  layers/meta-virtualization:
+    url: https://git.yoctoproject.org/git/meta-virtualization
+    branch: scarthgap
+
+  layers/meta-security:
+    url: https://git.yoctoproject.org/git/meta-security
+    branch: scarthgap
+
+  layers/meta-arm:
+    url: git://git.yoctoproject.org/meta-arm
+    branch: scarthgap
+    layers:
+      meta-arm:
+      meta-arm-bsp:
+      meta-arm-toolchain:
+
+  layers/meta-ti:
+    url: git://git.yoctoproject.org/meta-ti
+    branch: scarthgap
+    layers:
+      meta-ti-bsp:
+      meta-ti-extras:
+      meta-beagle:
+
+  layers/meta-raspberrypi:
+    url: git://git.yoctoproject.org/meta-raspberrypi
+    branch: scarthgap
+  
+  meta-custom:
+    path: ./meta-custom

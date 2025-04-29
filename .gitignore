@@ -1,0 +1,5 @@
+src/layers
+src/build
+src/.kas_shell_history
+/downloads
+/sstate-cache

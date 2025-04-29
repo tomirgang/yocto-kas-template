@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+      "yocto-project.yocto-bitbake",
+      "ms-vscode.cpptools"
+    ]
+}

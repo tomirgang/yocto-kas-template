@@ -1,0 +1,24 @@
+header:
+  version: 11
+  includes:
+    - scarthgap.yaml
+
+machine: raspberrypi5
+distro: poky
+target: core-image-base
+
+local_conf_header:
+  meta-custom: |
+    PACKAGE_CLASSES ?= "package_deb"
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+    USER_CLASSES ?= "buildstats"
+    
+    # Shared download and state folder
+    DL_DIR = "/workspace/downloads"
+    SSTATE_DIR = "/workspace/sstate-cache"
+
+    # Enable security features
+    DISTRO_FEATURES:append = " security"
+
+    # Enable systemd as init manager
+    INIT_MANAGER = "systemd"
