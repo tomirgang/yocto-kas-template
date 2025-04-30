@@ -6,6 +6,8 @@ ARG HOST_GROUP=1000
 
 # Update container
 RUN apt update
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt upgrade -y \
+
 # Install compiler and base tools
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y \
     bash-completion \
@@ -51,8 +53,7 @@ RUN export LC_ALL=en_US.UTF-8 && \
     export LANG=en_US.UTF-8 && \
     locale-gen en_US.UTF-8
 
-# Create build user
-# and allow user to use sudo
+# Create user and allow user to use sudo
 RUN userdel ubuntu || true
 RUN addgroup --gid $HOST_GROUP $CONTAINER_USER && \
   useradd -rm -d /home/$CONTAINER_USER -s /bin/bash -g $CONTAINER_USER -G sudo -u $HOST_USER $CONTAINER_USER && \
@@ -111,3 +112,5 @@ RUN bash -c "source $HOME/.local/bin/env && uv tool install kas"
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Add cargo to path and install ripgrep
 RUN bash -c "source $HOME/.cargo/env && cargo install ripgrep"
+
+USER root
