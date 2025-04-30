@@ -1,0 +1,8 @@
+header:
+  version: 11
+  includes:
+    - scarthgap.yaml
+    - default_config.yaml
+    - dev_config.yaml
+
+machine: qemuarm64
