@@ -6,3 +6,8 @@ header:
     - dev_config.yaml
 
 machine: raspberrypi5
+
+local_conf_header:
+  pi5-config: |
+    # Allow wifi firmware license
+    LICENSE_FLAGS_ACCEPTED = " synaptics-killswitch"
