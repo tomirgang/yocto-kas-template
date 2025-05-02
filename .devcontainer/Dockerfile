@@ -6,7 +6,6 @@ ARG HOST_GROUP=1000
 
 # Update container
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt upgrade -y \
 
 # Install compiler and base tools
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y \
